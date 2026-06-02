@@ -7,7 +7,6 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -16,10 +15,12 @@
       justify-content: center;
       align-items: center;
       background: #f0f8ff;
+      overflow: hidden;
     }
     h1 {
       margin-bottom: 40px;
       font-size: 1.5em;
+      text-align: center;
     }
     button {
       padding: 12px 24px;
@@ -40,38 +41,51 @@
       top: 50%;
       background: #dc3545;
     }
-    /* Popup styling */
+    /* Popup modal */
     .popup {
-      display: none;
+      display: none; /* hidden by default */
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
       justify-content: center;
       align-items: center;
+      z-index: 1000;
     }
     .popup-content {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
       text-align: center;
       max-width: 80%;
+      animation: fadeIn 0.4s ease;
+    }
+    .popup-content h2 {
+      margin: 0 0 20px;
     }
     .popup-content button {
       background: #0078d7;
-      margin-top: 15px;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
     }
   </style>
 </head>
 <body>
-  <h1>Love mo ba talaga ako baby?</h1>
+  <h1>Love mo ba talaga ako babyy?</h1>
   <button id="yes">Yes</button>
   <button id="no">No</button>
 
   <!-- Popup -->
   <div id="popup" class="popup">
     <div class="popup-content">
-      <h2>heheheh dapat lang dejk lang baby ko I love you so much my babyyyy always MWAHHH!</h2>
+      <h2>heheheh dapat lang dejk lang baby ko I love you so much my babyyyy always MWAHHH! 💖</h2>
       <button id="closePopup">Close</button>
     </div>
   </div>
@@ -93,11 +107,11 @@
     noBtn.addEventListener('touchstart', moveNoButton); // mobile
 
     yesBtn.addEventListener('click', () => {
-      popup.style.display = 'flex';
+      popup.style.display = 'flex'; // show popup
     });
 
     closePopup.addEventListener('click', () => {
-      popup.style.display = 'none';
+      popup.style.display = 'none'; // hide popup
     });
   </script>
 </body>
