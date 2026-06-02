@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yes or No?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #f0f8ff;
+    }
+    h1 {
+      margin-bottom: 40px;
+      font-size: 1.5em;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+      position: absolute;
+      border-radius: 8px;
+      border: none;
+      background: #0078d7;
+      color: white;
+    }
+    #yes {
+      left: 40%;
+      top: 50%;
+      background: #28a745;
+    }
+    #no {
+      left: 55%;
+      top: 50%;
+      background: #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <h1>Love mo ba talaga ako babyy?</h1>
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+
+    // Move "No" button when tapped or hovered
+    function moveNoButton() {
+      const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    }
+
+    noBtn.addEventListener('mouseover', moveNoButton);
+    noBtn.addEventListener('touchstart', moveNoButton); // for mobile touch
+
+    yesBtn.addEventListener('click', () => {
+      alert('heheheh dapat lang dejk lang baby ko I love you so much my babyyyy always MWAHHH!');
+    });
+  </script>
+</body>
+</html>
